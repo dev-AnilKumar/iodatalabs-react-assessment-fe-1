@@ -134,6 +134,28 @@ src/
 - Network failure handling
 - Input validation and edge cases
 
+## 🧪 Testing
+
+This project includes a comprehensive test suite to validate your implementation:
+
+```bash
+# Run tests in watch mode (recommended)
+npm test
+
+# Run tests once
+npm run test:run
+
+# Run tests with UI (optional)
+npm run test:ui
+```
+
+**Test Status:**
+- ✅ **Passing**: Existing functionality works correctly
+- ❌ **Failing**: Features you need to implement (expected)
+- ⏭️ **Skipped**: Tests ready to enable once features are implemented
+
+The tests are designed to guide your implementation and will help ensure your solution meets requirements.
+
 ## 📝 Submission Guidelines
 
 1. **Complete both tasks**

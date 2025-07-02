@@ -40,10 +40,11 @@ export function FiltersForm({ onSubmit, initialFilters = {} }) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* Search */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="search" className="block text-sm font-medium text-gray-700 mb-1">
               Search
             </label>
             <input
+              id="search"
               type="text"
               value={filters.search}
               onChange={(e) => handleChange('search', e.target.value)}
@@ -54,10 +55,11 @@ export function FiltersForm({ onSubmit, initialFilters = {} }) {
 
           {/* Status */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="status" className="block text-sm font-medium text-gray-700 mb-1">
               Status
             </label>
             <select
+              id="status"
               value={filters.status}
               onChange={(e) => handleChange('status', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -73,10 +75,11 @@ export function FiltersForm({ onSubmit, initialFilters = {} }) {
 
           {/* Department */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="department" className="block text-sm font-medium text-gray-700 mb-1">
               Department
             </label>
             <select
+              id="department"
               value={filters.department}
               onChange={(e) => handleChange('department', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -93,10 +96,11 @@ export function FiltersForm({ onSubmit, initialFilters = {} }) {
 
           {/* Priority */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="priority" className="block text-sm font-medium text-gray-700 mb-1">
               Priority
             </label>
             <select
+              id="priority"
               value={filters.priority}
               onChange={(e) => handleChange('priority', e.target.value)}
               className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -110,10 +114,11 @@ export function FiltersForm({ onSubmit, initialFilters = {} }) {
 
           {/* Date From */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="dateFrom" className="block text-sm font-medium text-gray-700 mb-1">
               Date From
             </label>
             <input
+              id="dateFrom"
               type="date"
               value={filters.dateFrom}
               onChange={(e) => handleChange('dateFrom', e.target.value)}
@@ -123,10 +128,11 @@ export function FiltersForm({ onSubmit, initialFilters = {} }) {
 
           {/* Date To */}
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label htmlFor="dateTo" className="block text-sm font-medium text-gray-700 mb-1">
               Date To
             </label>
             <input
+              id="dateTo"
               type="date"
               value={filters.dateTo}
               onChange={(e) => handleChange('dateTo', e.target.value)}

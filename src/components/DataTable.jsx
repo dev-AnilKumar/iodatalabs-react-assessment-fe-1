@@ -36,17 +36,16 @@ export function DataTable({ data, columns, pagination, onPaginationChange, sorti
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id} className="border-b bg-gray-50">
                 {headerGroup.headers.map((header) => (
-                  <th
-                    key={header.id}
-                    className={cn(
-                      "px-4 py-3 text-left text-sm font-medium text-gray-900",
-                      header.column.getCanSort() && "cursor-pointer select-none hover:bg-gray-100"
-                    )}
-                    onClick={header.column.getToggleSortingHandler()}
-                  >
-                    <div className="flex items-center space-x-2">
-                      {flexRender(header.column.columnDef.header, header.getContext())}
-                      {header.column.getCanSort() && (
+                  <th key={header.id} className="px-4 py-3 text-left">
+                    {header.column.getCanSort() ? (
+                      <button
+                        onClick={header.column.getToggleSortingHandler()}
+                        className={cn(
+                          "flex items-center space-x-2 text-sm font-medium text-gray-900",
+                          "hover:bg-gray-100 px-2 py-1 rounded -mx-2 -my-1"
+                        )}
+                      >
+                        {flexRender(header.column.columnDef.header, header.getContext())}
                         <div className="flex flex-col">
                           <ChevronUpIcon 
                             className={cn(
@@ -61,8 +60,12 @@ export function DataTable({ data, columns, pagination, onPaginationChange, sorti
                             )} 
                           />
                         </div>
-                      )}
-                    </div>
+                      </button>
+                    ) : (
+                      <div className="text-sm font-medium text-gray-900">
+                        {flexRender(header.column.columnDef.header, header.getContext())}
+                      </div>
+                    )}
                   </th>
                 ))}
               </tr>
@@ -85,7 +88,7 @@ export function DataTable({ data, columns, pagination, onPaginationChange, sorti
             ) : (
               <tr>
                 <td colSpan={columns.length} className="px-4 py-8 text-center text-gray-500">
-                  No results found.
+                  No data available
                 </td>
               </tr>
             )}
